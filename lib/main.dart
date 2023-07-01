@@ -1,13 +1,13 @@
 import 'dart:async';
 import 'dart:math';
 
-import './input_listener.dart';
-import './theme_colors.dart';
-import './typing_context.dart';
-import './word_generator.dart';
+import 'package:another_typing_test/input_listener.dart';
+import 'package:another_typing_test/theme_colors.dart';
+import 'package:another_typing_test/typing_context.dart';
+import 'package:another_typing_test/word_generator.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:google_fonts/google_fonts.dart';
+//import 'package:google_fonts/google_fonts.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -33,7 +33,7 @@ class MyApp extends StatelessWidget {
         colorScheme: const ColorScheme.dark(
           background: Colors.transparent,
         ),
-        textTheme: GoogleFonts.robotoMonoTextTheme(),
+        //textTheme: GoogleFonts.robotoMonoTextTheme(),
       ).copyWith(
         outlinedButtonTheme: OutlinedButtonThemeData(
           style: OutlinedButton.styleFrom(
@@ -186,7 +186,7 @@ class _HomePageState extends State<HomePage>
                     '.' * TypingContext.maxLineLength,
                     style: Theme.of(context)
                         .textTheme
-                        .headline4
+                        .headlineMedium
                         ?.copyWith(color: Colors.transparent),
                   ),
                 ),
@@ -230,7 +230,7 @@ class _HomePageState extends State<HomePage>
                         OutlinedButton.icon(
                           label: Text(
                             'Top ${wordListType.count} words',
-                            style: TextStyle(color: Color(0xFF1A237E)),
+                            style: const TextStyle(color: Color(0xFF1A237E)),
                           ),
                           icon: const Icon(
                             Icons.notes,
@@ -286,7 +286,7 @@ class _HomePageState extends State<HomePage>
                                   children: [
                                     if (typingContext.currentLineIndex > 0) ...{
                                       buildLine(
-                                          typingContext.currentLineIndex - 1),
+                                          typingContext.currentLineIndex - 1,),
                                     },
                                     buildCurrentLine(isCurrentWordWrong),
                                     buildLineAtOffset(1),
@@ -307,9 +307,9 @@ class _HomePageState extends State<HomePage>
                                   'Test completed',
                                   style: Theme.of(context)
                                       .textTheme
-                                      .headline4
+                                      .headlineMedium
                                       ?.copyWith(
-                                        color: Color(0xFF1A237E),
+                                        color: const Color(0xFF1A237E),
                                       ),
                                 ),
                               ),
@@ -331,7 +331,7 @@ class _HomePageState extends State<HomePage>
   Text _buildTitle(String text) {
     return Text(
       text,
-      style: Theme.of(context).textTheme.headline5?.copyWith(
+      style: Theme.of(context).textTheme.headlineSmall?.copyWith(
             color: ThemeColors.green,
           ),
     );
@@ -347,7 +347,7 @@ class _HomePageState extends State<HomePage>
         typingContext.getLine(nextLineStart),
         style: Theme.of(context)
             .textTheme
-            .headline4
+            .headlineMedium
             ?.copyWith(color: Theme.of(context).hintColor),
       ),
     );
@@ -385,7 +385,7 @@ class _HomePageState extends State<HomePage>
                 ),
             },
           ],
-          style: Theme.of(context).textTheme.headline4,
+          style: Theme.of(context).textTheme.headlineMedium,
         ),
       ),
     );
@@ -428,7 +428,7 @@ class _HomePageState extends State<HomePage>
                     ],
                     style: Theme.of(context)
                         .textTheme
-                        .headline4
+                        .headlineMedium
                         ?.copyWith(color: Colors.transparent),
                   ),
                 ),
@@ -508,7 +508,7 @@ class _HomePageState extends State<HomePage>
                     ),
                   ),
               ],
-              style: Theme.of(context).textTheme.headline4,
+              style: Theme.of(context).textTheme.headlineMedium,
             ),
           ),
         ),
