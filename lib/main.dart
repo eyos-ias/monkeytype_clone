@@ -1,10 +1,10 @@
 import 'dart:async';
 import 'dart:math';
 
-import 'package:another_typing_test/input_listener.dart';
-import 'package:another_typing_test/theme_colors.dart';
-import 'package:another_typing_test/typing_context.dart';
-import 'package:another_typing_test/word_generator.dart';
+import './input_listener.dart';
+import './theme_colors.dart';
+import './typing_context.dart';
+import './word_generator.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
